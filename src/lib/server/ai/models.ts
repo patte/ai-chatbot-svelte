@@ -1,22 +1,24 @@
-import { createXai } from '@ai-sdk/xai';
-import { createGroq } from '@ai-sdk/groq';
-import { customProvider, extractReasoningMiddleware, wrapLanguageModel } from 'ai';
-import { XAI_API_KEY, GROQ_API_KEY } from '$env/static/private';
+// import { customProvider, extractReasoningMiddleware, wrapLanguageModel } from 'ai';
+import { customProvider } from 'ai';
 
-const xai = createXai({ apiKey: XAI_API_KEY });
-const groq = createGroq({ apiKey: GROQ_API_KEY });
+import { createOllama } from 'ollama-ai-provider';
+
+const ollama = createOllama({
+	baseURL: 'http://localhost:11434/api'
+});
 
 export const myProvider = customProvider({
 	languageModels: {
-		'chat-model': xai('grok-2-1212'),
-		'chat-model-reasoning': wrapLanguageModel({
-			model: groq('deepseek-r1-distill-llama-70b'),
-			middleware: extractReasoningMiddleware({ tagName: 'think' })
-		}),
-		'title-model': xai('grok-2-1212'),
-		'artifact-model': xai('grok-2-1212')
-	},
-	imageModels: {
-		'small-model': xai.image('grok-2-image')
+		'chat-model': ollama('gemma3:12b'),
+		// 'chat-model-reasoning': wrapLanguageModel({
+		// 	model: groq('deepseek-r1-distill-llama-70b'),
+		// 	middleware: extractReasoningMiddleware({ tagName: 'think' })
+		// }),
+		'title-model': ollama('gemma3:12b')
+		// 'title-model': xai('grok-2-1212'),
+		// 'artifact-model': xai('grok-2-1212')
 	}
+	// imageModels: {
+	// 	'small-model': xai.image('grok-2-image')
+	// }
 });

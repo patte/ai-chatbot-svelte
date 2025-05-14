@@ -21,9 +21,7 @@
 		"db:up": "drizzle-kit up"
 	},
 	"devDependencies": {
-		"@ai-sdk/groq": "^1.2.0",
 		"@ai-sdk/svelte": "^2.1.0",
-		"@ai-sdk/xai": "^1.2.1",
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
 		"@lucide/svelte": "^0.483.0",
@@ -75,5 +73,8 @@
 			"esbuild"
 		]
 	},
-	"packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+	"packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0",
+	"dependencies": {
+		"ollama-ai-provider": "^1.2.0"
+	}
 }
