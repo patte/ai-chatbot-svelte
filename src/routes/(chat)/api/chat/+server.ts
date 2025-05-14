@@ -66,7 +66,10 @@ export async function POST({ request, locals: { user }, cookies }) {
 			});
 
 			return ok(undefined);
-		}).orElse(() => error(500, 'An error occurred while processing your request'));
+		}).orElse((e) => {
+			console.error(e);
+			error(500, 'An error occurred while processing your request');
+		});
 	}
 
 	return createDataStreamResponse({
