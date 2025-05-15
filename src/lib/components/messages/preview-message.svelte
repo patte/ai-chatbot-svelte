@@ -10,8 +10,12 @@
 	import { fly } from 'svelte/transition';
 	import type { UIMessage } from '@ai-sdk/svelte';
 
-	let { message, readonly, loading }: { message: UIMessage; readonly: boolean; loading: boolean } =
-		$props();
+	let {
+		message,
+		readonly,
+		loading,
+		isLast
+	}: { message: UIMessage; readonly: boolean; loading: boolean; isLast: boolean } = $props();
 
 	let mode = $state<'view' | 'edit'>('view');
 </script>
@@ -52,7 +56,7 @@
 			{#each message.parts as part, i (`${message.id}-${i}`)}
 				{@const { type } = part}
 				{#if type === 'reasoning'}
-					<MessageReasoning {loading} reasoning={part.reasoning} />
+					<MessageReasoning loading={loading && isLast} reasoning={part.reasoning} />
 				{:else if type === 'text'}
 					{#if mode === 'view'}
 						<div class="flex flex-row items-start gap-2">

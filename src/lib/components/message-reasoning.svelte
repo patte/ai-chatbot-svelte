@@ -22,28 +22,30 @@
 </script>
 
 <div class="flex flex-col">
-	{#if loading}
-		<div class="flex flex-row items-center gap-2">
-			<div class="font-medium">Reasoning</div>
-			<div class="animate-spin">
+	<div class="flex flex-row items-center gap-2">
+		<div class="font-medium">
+			{#if loading}
+				Reasoning...
+			{:else}
+				Reasoned for some time
+			{/if}
+		</div>
+		<button
+			class="cursor-pointer"
+			onclick={() => {
+				expanded = !expanded;
+			}}
+			aria-label="Expand reasoning"
+			aria-expanded={expanded}
+			aria-controls="reasoning"
+		>
+			{#if loading}
 				<LoaderIcon />
-			</div>
-		</div>
-	{:else}
-		<div class="flex flex-row items-center gap-2">
-			<div class="font-medium">Reasoned for a few seconds</div>
-			<!-- svelte-ignore a11y_click_events_have_key_events -->
-			<!-- svelte-ignore a11y_no_static_element_interactions -->
-			<div
-				class="cursor-pointer"
-				onclick={() => {
-					expanded = !expanded;
-				}}
-			>
+			{:else}
 				<ChevronDownIcon />
-			</div>
-		</div>
-	{/if}
+			{/if}
+		</button>
+	</div>
 
 	{#if expanded}
 		<div

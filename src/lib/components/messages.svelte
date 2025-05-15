@@ -50,8 +50,8 @@
 		<Overview />
 	{/if}
 
-	{#each messages as message (message.id)}
-		<PreviewMessage {message} {readonly} {loading} />
+	{#each messages as message, i (message.id)}
+		<PreviewMessage {message} {readonly} {loading} isLast={i === messages.length - 1} />
 	{/each}
 
 	{#if loading && messages.length > 0 && messages[messages.length - 1].role === 'user'}
