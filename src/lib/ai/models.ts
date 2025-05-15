@@ -8,13 +8,15 @@ interface ChatModel {
 
 export const chatModels: Array<ChatModel> = [
 	{
-		id: 'chat-model',
-		name: 'Chat model',
-		description: 'Primary model for all-purpose chat'
+		id: 'gemma3:12b',
+		name: 'gemma3:12b',
+		description:
+			'Gemma is a lightweight, family of models from Google built on Gemini technology. The Gemma 3 models are multimodal—processing text and images—and feature a 128K context window with support for over 140 languages'
 	},
 	{
-		id: 'chat-model-reasoning',
-		name: 'Reasoning model',
-		description: 'Uses advanced reasoning'
+		id: 'deepseek-r1:14b',
+		name: 'deepseek-r1:14b',
+		description:
+			'DeepSeek’s first-generation reasoning models, achieving performance comparable to OpenAI-o1 across math, code, and reasoning tasks.'
 	}
 ];

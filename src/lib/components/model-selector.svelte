@@ -42,7 +42,7 @@
 			</Button>
 		{/snippet}
 	</DropdownMenuTrigger>
-	<DropdownMenuContent align="start" class="min-w-[300px]">
+	<DropdownMenuContent align="start" class="w-[300px]">
 		{#each chatModels as chatModel (chatModel.id)}
 			<DropdownMenuItem
 				onSelect={() => {
