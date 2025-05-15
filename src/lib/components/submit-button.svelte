@@ -11,7 +11,7 @@
 	{@render children()}
 
 	{#if pending || success}
-		<span class="absolute right-4 animate-spin">
+		<span class="absolute right-4">
 			<LoaderIcon />
 		</span>
 	{/if}

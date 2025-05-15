@@ -28,7 +28,7 @@
 		{/if}
 
 		{#if uploading}
-			<div class="absolute animate-spin text-zinc-500">
+			<div class="absolute text-zinc-500">
 				<LoaderIcon />
 			</div>
 		{/if}
