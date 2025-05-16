@@ -20,6 +20,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
     environment:
       - POSTGRES_URL=postgresql://postgres:postgres@postgres:5432/postgres
       - ORIGIN=http://localhost:3000
