@@ -23,6 +23,7 @@ services:
     environment:
       - POSTGRES_URL=postgresql://postgres:postgres@postgres:5432/postgres
       - ORIGIN=http://localhost:3000
+      - OLLAMA_URL=http://host.docker.internal:11434
 
 volumes:
   pg:

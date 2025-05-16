@@ -1,10 +1,10 @@
 import { customProvider, extractReasoningMiddleware, wrapLanguageModel } from 'ai';
-// import { customProvider } from 'ai';
+import { env } from '$env/dynamic/private';
 
 import { createOllama } from 'ollama-ai-provider';
 
 const ollama = createOllama({
-	baseURL: 'http://localhost:11434/api'
+	baseURL: env.OLLAMA_URL || 'http://localhost:11434/api'
 });
 
 export const myProvider = customProvider({
