@@ -29,7 +29,8 @@ ENV MIGRATE_ON_START=true
 
 COPY --from=install --chown=app:app /temp/dev/node_modules /app/node_modules
 COPY --from=build --chown=app:app /temp/dev/build /app/
-# COPY --from=build --chown=app:app /temp/dev/drizzle /app/drizzle
+COPY --from=build --chown=app:app /temp/dev/src/lib/server/db/migrations /app/migrations
+COPY --from=build --chown=app:app /temp/dev/src/lib/server/db/migrate.ts /app/migrate.ts
 
 CMD ["node", "index.js"]
 
