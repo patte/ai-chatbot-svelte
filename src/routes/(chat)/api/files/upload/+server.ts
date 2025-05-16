@@ -1,3 +1,5 @@
+/* 
+
 import { error } from '@sveltejs/kit';
 import { z } from 'zod';
 import { put } from '@vercel/blob';
@@ -60,3 +62,4 @@ export async function POST({ request, locals: { user } }) {
 		return error(500, 'Failed to process request');
 	}
 }
+*/
