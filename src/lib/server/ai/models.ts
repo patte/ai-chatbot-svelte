@@ -4,7 +4,7 @@ import { env } from '$env/dynamic/private';
 import { createOllama } from 'ollama-ai-provider';
 
 const ollama = createOllama({
-	baseURL: env.OLLAMA_URL || 'http://localhost:11434/api'
+	baseURL: `http://${env.OLLAMA_HOST || 'localhost:11434'}/api`
 });
 
 export const myProvider = customProvider({
