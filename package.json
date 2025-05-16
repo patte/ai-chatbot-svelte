@@ -28,7 +28,7 @@
 		"@oslojs/crypto": "^1.0.1",
 		"@oslojs/encoding": "^1.1.0",
 		"@sejohnson/svelte-themes": "^0.0.6",
-		"@sveltejs/adapter-vercel": "^5.5.2",
+		"@sveltejs/adapter-node": "^5.2.12",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"@types/ms": "^2.1.0",
